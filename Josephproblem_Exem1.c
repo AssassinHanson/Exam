@@ -17,7 +17,7 @@ int main()
     LinkList L,p,pt,qt;
     while(1)
     {
-        printf("ÇëÊäÈëÈËÊý£º");
+        printf("è¯·è¾“å…¥äººæ•°ï¼š");
         scanf("%d",&n);
         if(n>0) break;
     }
@@ -29,7 +29,7 @@ int main()
     qt=L;
     while(1)
     {
-        printf("ÇëÊäÈë³õÊ¼±¨ÊýÉÏÏÞ£º");
+        printf("è¯·è¾“å…¥åˆå§‹æŠ¥æ•°ä¸Šé™ï¼š");
         scanf("%d",&m);
         if(m>0) break;
     }
@@ -37,7 +37,7 @@ int main()
     p->num=1;
     while(1)
     {
-        printf("ÇëÊäÈëµÚ1¸öÈËµÄÃÜÂë£º");
+        printf("è¯·è¾“å…¥ç¬¬1ä¸ªäººçš„å¯†ç ï¼š");
         scanf("%d",&pt->data);
         if(pt->data>0)  break;
     }
@@ -50,13 +50,13 @@ int main()
         p->num=i+1;
         while(1)
         {
-            printf("ÇëÊäÈëµÚ%d¸öÈËµÄÃÜÂë£º",i+1);
+            printf("è¯·è¾“å…¥ç¬¬%dä¸ªäººçš„å¯†ç ï¼š",i+1);
             scanf("%d",&pt->data);
             if(pt->data>0)  break;
         }
     }
     pt->next=L;
-    printf("\nÒÔÏÂÊÇ°´Ë³ÐòÊä³öµÄÐòºÅ£º\n");
+    printf("\nä»¥ä¸‹æ˜¯æŒ‰é¡ºåºè¾“å‡ºçš„åºå·ï¼š\n");
     while(pt!=pt->next)
     {
     for(i=1;i<m;i++)
