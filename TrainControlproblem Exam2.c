@@ -4,7 +4,7 @@
 typedef int SElemType;
 typedef int Status;
 long total = 0;
-int N ;
+int N = 5;
 
 typedef struct{
     SElemType *base;
@@ -21,7 +21,14 @@ void Init(SqStack *s){
 }
 
 Status Push(SqStack *s, SElemType e){
-    *s->top++=e;
+    if(s->top - s->base >= s->stacksize){
+        s->base = (SElemType *)realloc(s->base, (s->stacksize + N) * sizeof(SElemType));
+        if(!s->base) exit(0);
+        s->top = s->base + s->stacksize;
+        s->stacksize += N;
+    }
+    *s->top=e;
+    s->top++;
 }
 
 SElemType Pop(SqStack *s){
@@ -47,18 +54,18 @@ void Print(SqStack *s){
     printf("\n");
 }
 
-void process(SqStack *temp, SqStack *output, SElemType n){
-    if(n <= N){
+void process(SqStack *temp, SqStack *output, SElemType n, SElemType m){
+    if(n <= m){
         Push(temp, n);
-        process(temp, output, n+1);
+        process(temp, output, n+1, m);
         Pop(temp);
     }
     if(!Empty(temp)){
         Push(output, Pop(temp));
-        process(temp, output, n);
+        process(temp, output, n, m);
         Push(temp, Pop(output));
     }
-    else if(n > N){
+    else if(n > m){
         total++;
         Print(output);
     }
@@ -66,16 +73,16 @@ void process(SqStack *temp, SqStack *output, SElemType n){
 
 
 int main()
-{
+{   int m;
     SqStack temp, output;
     Init(&temp);
     Init(&output);
 
     printf("please input max number of train:");
-    scanf("%d",&N);
+    scanf("%d",&m);
     printf("\nthe result is:\n\n");
 
-    process(&temp, &output, 1);
+    process(&temp, &output, 1, m);
 
 }
 
