@@ -36,13 +36,13 @@ void Free();
 void welcome()
 {
 	printf("**************************************\n");
-	printf("*          ÇëÑ¡ÔñÈçÏÂ²Ù×÷            *\n");
-	printf("*            I.³õÊ¼»¯                *\n");
-	printf("*            E.±àÂë                  *\n");
-	printf("*            D.ÒëÂë                  *\n");
-	printf("*            P.Ó¡´úÂëÎÄ¼ş            *\n");
-	printf("*            T.´òÓ¡¹ş·òÂüÊ÷          *\n");
-	printf("*            Q.ÍË³ö                  *\n");
+	printf("*          è¯·é€‰æ‹©å¦‚ä¸‹æ“ä½œ            *\n");
+	printf("*            I.åˆå§‹åŒ–                *\n");
+	printf("*            E.ç¼–ç                   *\n");
+	printf("*            D.è¯‘ç                   *\n");
+	printf("*            P.å°ä»£ç æ–‡ä»¶            *\n");
+	printf("*            T.æ‰“å°å“ˆå¤«æ›¼æ ‘          *\n");
+	printf("*            Q.é€€å‡º                  *\n");
 	printf("**************************************\n");
 }
 
@@ -50,19 +50,19 @@ void welcome()
 void Init()
 {
 	int i;
-	printf("ÇëÊäÈë×Ö·û¸öÊı:\n");
+	printf("è¯·è¾“å…¥å­—ç¬¦ä¸ªæ•°:\n");
 	scanf("%d",&n);
 	while(n<2){
-		printf("ÊäÈëµÄÊı¾İÓĞÎó£¬ÇëÖØĞÂÊäÈë:\n");
+		printf("è¾“å…¥çš„æ•°æ®æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥:\n");
 		scanf("%d",&n);
 	}
 	ch=(char *)malloc(n*sizeof(char));
-	printf("ÇëÊäÈëËùÓĞ×Ö·û:\n");
+	printf("è¯·è¾“å…¥æ‰€æœ‰å­—ç¬¦:\n");
 	getchar();
 	for(i=0;i<n;++i)
 		scanf("%c",&ch[i]);
 	w=(int *)malloc(n*sizeof(int));
-	printf("ÇëÊäÈëÕâĞ©×Ö·ûµÄÈ¨Öµ:\n");
+	printf("è¯·è¾“å…¥è¿™äº›å­—ç¬¦çš„æƒå€¼:\n");
 	for(i=0;i<n;++i)
 		scanf("%d",&w[i]);
 	HuffmanCoding(HT,HC,w,n,ch);
@@ -73,11 +73,11 @@ void Init()
 	int b[5]={1,2,3,4,5};
 	HuffmanCoding(HT,HC,b,n,c);
 
-	printf("±àÂë½á¹ûÈçÏÂ:\n");
+	printf("ç¼–ç ç»“æœå¦‚ä¸‹:\n");
 	for(i=1;i<=n;++i)
-		printf("%c:%s\n",HT[i].ch,HC[i]);*///²âÊÔÓÃ
+		printf("%c:%s\n",HT[i].ch,HC[i]);*///æµ‹è¯•ç”¨
 
-	printf("³õÊ¼»¯³É¹¦\n");
+	printf("åˆå§‹åŒ–æˆåŠŸ\n");
 }
 
 void select(HuffmanTree HT,int j,int &s1,int &s2)
@@ -142,21 +142,21 @@ void Encoding()
 {
 	int i, j;
 
-    printf("ÇëÊäÈë×Ö·û¸öÊı:\n");
+    printf("è¯·è¾“å…¥å­—ç¬¦ä¸ªæ•°:\n");
 	scanf("%d",&l);
 	while(l<2){
-		printf("ÊäÈëµÄÊı¾İÓĞÎó£¬ÇëÖØĞÂÊäÈë:\n");
+		printf("è¾“å…¥çš„æ•°æ®æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥:\n");
 		scanf("%d",&l);
 	}
 	pFile=(char *)malloc(l*sizeof(char));
-	printf("ÇëÊäÈëËùÓĞ×Ö·û:\n");
+	printf("è¯·è¾“å…¥æ‰€æœ‰å­—ç¬¦:\n");
 	getchar();
 	for(i=0;i<l;++i)
 		scanf("%c",&pFile[i]);
 
     /*l=6;
     pFile=(char *)malloc(l*sizeof(char));
-    strcpy(pFile,"abcdea");*///²âÊÔÓÃ
+    strcpy(pFile,"abcdea");*///æµ‹è¯•ç”¨
 
     CodeFile = (char **)malloc((l) * sizeof(char *));
     for(i = 0; i <l; i++){
@@ -167,9 +167,9 @@ void Encoding()
 
     /*for(i=0;i<l;i++){
         printf("%c:%s\n",pFile[i],CodeFile[i]);
-    }*///²âÊÔÓÃ
+    }*///æµ‹è¯•ç”¨
 
-    printf("±àÂë³É¹¦\n");
+    printf("ç¼–ç æˆåŠŸ\n");
 }
 
 void Decoding()
@@ -184,9 +184,9 @@ void Decoding()
 
     /*for(i=0;i<l;i++){
         printf("%c",TextFile[i]);
-    }*///²âÊÔÓÃ
+    }*///æµ‹è¯•ç”¨
 
-    printf("\nÒëÂë³É¹¦\n");
+    printf("\nè¯‘ç æˆåŠŸ\n");
 }
 
 
@@ -207,8 +207,8 @@ void Print()
         strcat(temp, CodeFile[i]);
     }
 
-    int m = 5;
-    printf("´úÂëÎª£º\n");
+    int m = 50;
+    printf("ä»£ç ä¸ºï¼š\n");
     for(i = 0, j = 0; temp[i] != '\0'; i++){
         if(i%m == 0){
             printf("\n");
