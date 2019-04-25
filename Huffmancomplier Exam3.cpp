@@ -20,7 +20,6 @@ char *pFile;
 char **CodeFile;
 int l=0;
 char *TextFile;
-char **CodePrin;
 
 
 void welcome();
@@ -213,11 +212,8 @@ void Print()
         if(i%m == 0){
             printf("\n");
             j++;
-            CodePrin = (char **)realloc(CodePrin, (j+1) * sizeof(char *));
-            CodePrin[j] = (char *)malloc(m * sizeof(char));
         }
         printf("%c", temp[i]);
-        CodePrin[j][i%m] = temp[i];
     }
     printf("\n");
 }
